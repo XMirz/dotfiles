@@ -1,0 +1,18 @@
+window:
+  opacity: 0.9
+  padding:
+    x: 10
+    y: 10
+font:
+  normal:
+    family: 'SF Mono Ligatures'
+    style: Medium
+  bold:
+    family: 'SF Mono Ligatures'
+  size: 8.0
+colors:
+  primary:
+    background: '#111827'
+# key_bindings:
+  # - { key: V,         mods: Control,                    action: Paste }
+  # - { key: C,         mods: Control,                    action: Copy }

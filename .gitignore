@@ -1,0 +1,10 @@
+# Ignore Everyting
+/*
+
+# Except
+!.gitignore
+!alacritty/
+!bspwm/
+!sxhkd/
+!rofi/
+!polybar/

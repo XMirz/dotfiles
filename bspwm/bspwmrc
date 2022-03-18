@@ -1,0 +1,50 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+pgrep -x lxsession > /dev/null || lxsession &
+pgrep -x imwheel > /dev/null || imwheel &
+
+# Terminate if picom is already running
+killall -q picom
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
+
+# Launch picom
+picom --config ~/.config/picom/picom.conf &
+
+# Terminate already running bar instances
+killall -q polybar
+# If all your bars have ipc enabled, you can also use 
+# polybar-msg cmd quit
+
+# Launch bar1 and bar2
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
+
+
+# nitrogen --set-zoom-fill /home/Predator/Pictures/Wallpapers/Lost_Forest_PC_BTLG.jpg & 
+# feh --bg-fill ~/Pictures/Wallpapers/Outrun_PC_BTLG.jpg
+feh --bg-fill ~/Pictures/Wallpapers/Horizon/1082417.jpg
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width         2
+bspc config window_gap           8 
+
+# bspc config border_radius	 8
+bspc config split_ratio          0.5
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false 
+
+
+# border color 
+bspc config focused_border_color "#0EA5E9"
+# bspc config normal_border_color "#E11D48"
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off

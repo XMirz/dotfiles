@@ -1,0 +1,305 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #E60F172A
+;foreground = #676b73 
+foreground = ${xrdb:foreground}
+
+white = #FAFAFA
+cyan = #22D3EE
+blue = #3B82F6
+green = #10B981
+yellow = #EAB308
+pink = #EC4899
+rose = #F43F5E
+indigo = #818CF8
+
+color0 = ${xrdb:color0}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color7 = ${xrdb:color7}
+color8 = ${xrdb:color8}
+color9 = ${xrdb:color9}
+color10 = ${xrdb:color10}
+color11 = ${xrdb:color11}
+color12 = ${xrdb:color12}
+color13 = ${xrdb:color13}
+color14 = ${xrdb:color14}
+color15 = ${xrdb:color15}
+dark-light = #272A2B 
+active-light = #313435
+
+[bar/example]
+tray-position = none
+monitor = eDP-1
+width =  100%
+height = 28
+padding-left =1
+padding-right =2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+border-top-size = 0
+border-bottom-size = 0
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
+
+line-size = 1
+wm-restack = bspwm
+
+modules-left = bspwm round-right 
+modules-center =  
+modules-right = volume separator xbacklight separator wlan separator memory separator cpu separator battery separator time  separator powermenu
+font-0 = FiraMono Nerd Font Mono:style=Bold:pixelsize=11;2
+font-1 = FiraMono Nerd Font:style=Bold:pixelsize=13;2
+font-2 = FiraMono Nerd Font Mono:style=Bold:pixelsize=17;4
+font-3 = unifont:fontformat=truetype:size=9;3
+
+[module/separator]
+type = custom/text
+content = "    "
+
+[module/round-left]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #2a2e36
+
+[module/round-right]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = #2a2e36
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-padding = 1
+label = %temperature%
+label-warn = %temperature%
+ramp-0 =  "󰜗" 
+ramp-font = 3
+ramp-foreground = #a4ebf3
+
+[module/bspwm]
+type = internal/bspwm
+
+;pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+
+format = <label-state>
+ws-icon-0 = "1;%{F#22D3EE}%{T4}  %{T2} " 
+ws-icon-1 = "2;%{F#10B981}  "
+ws-icon-2 = "3;%{F#EAB308} ﰆ "
+ws-icon-3 = "4;%{F#F43F5E}  "
+ws-icon-4 = "5;%{F#6366F1}  "
+
+label-separator = ""
+label-separator-background = #2a2e36
+
+label-focused =%icon%  
+;label-focused-foreground = ${colors.white}
+label-focused-padding = 1
+label-focused-background = ${colors.background}
+label-focused-margin = 0 
+
+label-occupied =%icon%  
+label-occupied-foreground = #646870  
+label-occupied-background = #2a2e36
+label-occupied-padding = 1
+label-occupied-margin = 0 
+
+label-empty =%icon%
+label-empty-foreground =   ${colors.foreground}
+label-empty-padding = 1
+label-empty-background = #2a2e36
+label-empty-margin = 0 
+
+label-urgent = %icon%
+label-urgent-foreground = #88C0D0
+label-urgent-background = #2a2e36
+label-urgent-padding = 1
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <ramp-volume>  <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 奄
+ramp-volume-0-font = 
+ramp-volume-1 = 奔
+ramp-volume-1-font = 
+ramp-volume-2 = 墳
+ramp-volume-2-font = 
+;format-volume-background = ${colors.cyan}
+format-volume-foreground = ${colors.cyan}
+;format-volume-padding = 1
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <ramp>  <label>
+ramp-0 =
+ramp-1 =
+ramp-2 =
+ramp-3 =
+;format-prefix = ""
+label = %percentage%%
+format-foreground = ${colors.green}
+;format-prefix-foreground = #61afef
+;format-padding = 1
+
+[module/wlan]
+type = internal/network
+interface = wlp8s0
+interval = 3.0
+
+format-connected = <ramp-signal>  <label-connected>
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+label-disconnected = "No Network"
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 直
+format-connected-foreground = ${colors.pink}
+format-disconnected-foreground = ${colors.pink}
+
+
+[module/memory]
+type = custom/script
+;exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+exec = expr $(cat /proc/meminfo | awk 'NR==1 {print $2}') - $(cat /proc/meminfo | awk 'NR==3 {print $2}') | awk '{print $0/1024}' | awk '{printf "%.f\n", $1}'
+format = <label>
+format-prefix = "﬙ " 
+label = %output% MB
+;label-padding = 1
+format-foreground = ${colors.yellow}
+
+[module/cpu]
+type = internal/cpu
+interval = 2.5
+
+format-prefix ="  " 
+format = <label>
+
+label = CPU %percentage%%
+format-foreground = ${colors.rose}
+;format-background = #2a2e36
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = AC0
+full-at = 98
+
+format-charging =<animation-charging>  <label-charging>
+label-charging = %percentage%%
+format-charging-foreground = ${colors.indigo}
+;format-charging-background = ${colors.background}
+
+format-discharging =<ramp-capacity>  <label-discharging>
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.indigo}
+;format-discharging-background = ${colors.background}
+
+format-full = <label-full>
+label-full = %percentage%%
+format-full-prefix = "  "
+format-full-foreground = ${colors.indigo}
+
+label-discharging-foreground = ${colors.indigo}
+ramp-capacity-foreground =  ${colors.indigo}
+label-charging-foreground = ${colors.green}
+
+;label-padding = 1
+
+ramp-capacity-0 = " " 
+ramp-capacity-1 = " " 
+ramp-capacity-2 = " " 
+ramp-capacity-3 = " " 
+ramp-capacity-4 = " "
+
+
+animation-charging-0 = " " 
+animation-charging-1 = " " 
+animation-charging-2 = " " 
+animation-charging-3 = " " 
+animation-charging-4 = " "
+
+
+animation-charging-foreground = #DF8890
+animation-charging-framerate = 750
+
+;format-charging-padding = 1
+;format-discharging-padding = 1
+
+
+format-muted = <label-muted>
+format-muted-background = ${colors.white} 	
+format-muted-foreground = ${colors.background}
+label-muted ="  "
+format-muted-font = 2
+
+
+[module/time]
+type = internal/date
+interval = 60
+
+format = <label>
+;format-background = #2a2e36
+format-foreground = ${colors.cyan}
+
+date =%H:%M%{F-}
+time-alt =%a, %b %d%{F-}
+
+label = %date%%time%
+
+
+[module/powermenu]
+type = custom/text 
+content =" " 
+content-padding = 0
+click-left = doas zzz &
+content-foreground = ${colors.rose}
+
+[module/updates]
+type = custom/script
+exec = doas xbps-install -S > /dev/null 2>&1; xbps-updates
+format = <label>
+interval = 4600 
+label =  %output%  
+label-padding = 2
+label-foreground = #BF616A
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...
