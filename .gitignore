@@ -5,6 +5,7 @@
 !.gitignore
 !alacritty/
 !bspwm/
-!sxhkd/
-!rofi/
+!fish
 !polybar/
+!rofi/
+!sxhkd/

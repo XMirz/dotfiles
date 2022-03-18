@@ -1,0 +1,88 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/home/xmirz/Android/Sdk/
+SETUVAR --export CHROME_EXECUTABLE:/bin/google\x2dchrome\x2dstable
+SETUVAR --export JAVA_HOME:/usr/lib/jvm/java\x2d8\x2dopenjdk
+SETUVAR --export PF_COL1:3
+SETUVAR --export PF_COL2:6
+SETUVAR --export PF_COL_ASCII:3
+SETUVAR --export PF_COL_AT:3
+SETUVAR --export PF_COL_HOST:3
+SETUVAR --export PF_COL_USER:6
+SETUVAR --export QT_QPA_PLATFORMTHEME:qt5ct
+SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_c:clear
+SETUVAR _fish_abbr_cv:cd\x20\x7e/\x2econfig/nvim
+SETUVAR _fish_abbr_fc:flutter\x20create
+SETUVAR _fish_abbr_fd:flutter\x20doctor
+SETUVAR _fish_abbr_fel:flutter\x20emulator\x20\x2d\x2dlaunch
+SETUVAR _fish_abbr_fpa:flutter\x20pub\x20add
+SETUVAR _fish_abbr_fpg:flutter\x20pub\x20get
+SETUVAR _fish_abbr_fr:flutter\x20run
+SETUVAR _fish_abbr_gc:git\x20add\x20\x2e\x20\x26\x26\x20git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gcm:git\x20checkout\x20master
+SETUVAR _fish_abbr_gg:git\x20log\x20\x2d\x2dall\x20\x2d\x2ddecorate\x20\x2d\x2doneline\x20\x2d\x2dgraph
+SETUVAR _fish_abbr_gpom:git\x20push\x20origin\x20master
+SETUVAR _fish_abbr_gs:git\x20status
+SETUVAR _fish_abbr_lp:awk\x20\x27/\x5c\x5bALPM\x5c\x5d\x20installed/\x20\x7b\x20print\x20\x24\x28NF\x2d1\x29\x20\x7d\x27\x20/var/log/pacman\x2elog
+SETUVAR _fish_abbr_lsa:sudo\x20/opt/lampp/lampp\x20startapache
+SETUVAR _fish_abbr_lsm:sudo\x20/opt/lampp/lampp\x20startmysql
+SETUVAR _fish_abbr_lss:sudo\x20/opt/lampp/lampp\x20stop
+SETUVAR _fish_abbr_mysql:/opt/lampp/bin/mysql
+SETUVAR _fish_abbr_n:neofetch
+SETUVAR _fish_abbr_nrb:npm\x20run\x20build
+SETUVAR _fish_abbr_nrd:npm\x20run\x20dev
+SETUVAR _fish_abbr_nrs:npm\x20run\x20start
+SETUVAR _fish_abbr_nrw:npm\x20run\x20watch
+SETUVAR _fish_abbr_p:pfetch
+SETUVAR _fish_abbr_pa:php\x20artisan
+SETUVAR _fish_abbr_paim:php\x20artisan\x20ide\x2dhelper\x3amodels
+SETUVAR _fish_abbr_pam:php\x20artisan\x20migrate
+SETUVAR _fish_abbr_pamake:php\x20artisan\x20make\x3a
+SETUVAR _fish_abbr_pamc:php\x20artisan\x20make\x3acontroller
+SETUVAR _fish_abbr_pamfs:php\x20artisan\x20migrate\x3afresh\x20\x2d\x2dseed
+SETUVAR _fish_abbr_pamm:php\x20artisan\x20make\x3amodel
+SETUVAR _fish_abbr_pammg:php\x20artisan\x20make\x3amigration
+SETUVAR _fish_abbr_pams:php\x20artisan\x20make\x3aseeder
+SETUVAR _fish_abbr_parl:php\x20artisan\x20route\x3alist
+SETUVAR _fish_abbr_sc:scrcpy\x20\x2d\x2dturn\x2dscreen\x2doff
+SETUVAR _fish_abbr_vima:vim\x20\x2econfig/alacritty/alacritty\x2eyml
+SETUVAR _fish_abbr_vimb:vim\x20\x7e/\x2econfig/bspwm/bspwmrc
+SETUVAR _fish_abbr_vimd:vim\x20\x7e/\x2econfig/dunst/dunstrc
+SETUVAR _fish_abbr_viminit:vim\x20\x7e/\x2econfig/nvim/init\x2elua
+SETUVAR _fish_abbr_vimp:vim\x20\x7e/\x2econfig/picom/picom\x2econf
+SETUVAR _fish_abbr_vimplug:vim\x20\x7e/\x2econfig/nvim/plugins\x2evim
+SETUVAR _fish_abbr_vimpp:vim\x20\x7e/\x2econfig/polybar/config
+SETUVAR _fish_abbr_vimrt:vim\x20\x7e/\x2econfig/rofi/themes\x2erasi
+SETUVAR _fish_abbr_vims:vim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
+SETUVAR _fish_abbr_voldown:pactl\x20set\x2dsink\x2dvolume\x20\x40DEFAULT_SINK\x40\x20\x2d10\x25
+SETUVAR _fish_abbr_volup:pactl\x20set\x2dsink\x2dvolume\x20\x40DEFAULT_SINK\x40\x20\x2b10\x25
+SETUVAR fish_color_autosuggestion:0087ff
+SETUVAR fish_color_cancel:normal
+SETUVAR fish_color_command:00ffff
+SETUVAR fish_color_comment:990000
+SETUVAR fish_color_cwd:008000
+SETUVAR fish_color_cwd_root:800000
+SETUVAR fish_color_end:009900
+SETUVAR fish_color_error:ff0000
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:normal
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:normal
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:ff00ff
+SETUVAR fish_color_quote:999900
+SETUVAR fish_color_redirection:ff00ff
+SETUVAR fish_color_search_match:ffff00
+SETUVAR fish_color_selection:c0c0c0
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:00ff00
+SETUVAR fish_color_valid_path:normal
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/home/xmirz/\x2epub\x2dcache/bin\x1e/home/xmirz/\x2econfig/composer/vendor/bin
