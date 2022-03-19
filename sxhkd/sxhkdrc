@@ -83,8 +83,14 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + {_,shift + }{z,x}
-	bspc {desktop -f, node -d} {prev,next}.local
+super + {z,x}
+	bspc desktop -f {prev,next}.local
+
+# move focues window to next/prev desktop
+super + shift + {z,x}
+  bash -c 'DIRECTION={prev,next}; \
+	bspc node -d $(echo $DIRECTION); \
+  bspc desktop -f $(echo $DIRECTION)'
 
 # focus the last node/desktop
 super + {grave,Tab}
