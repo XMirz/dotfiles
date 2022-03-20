@@ -6,8 +6,6 @@
 # super + shift + a
 # killall dunst;notify-send Anu "Test Critical" -u critical
 
-super + p
-  pkill dunst && notify-send a "description alo;sdl alsdjlkasdh asldhalsdhl; asdh las"
 # terminal emulator
 super + Return
 	alacritty
@@ -89,19 +87,20 @@ super + {z,x}
 
 # move focues window to next/prev desktop
 super + shift + {z,x}
-  bash -c 'DIRECTION={prev,next}; \
+  bash -c 'ID=$(bspc query -N -n); DIRECTION={prev,next}; \
 	bspc node -d $(echo $DIRECTION); \
-  bspc desktop -f $(echo $DIRECTION)'
+  bspc desktop -f $(echo $DIRECTION); \
+  bspc node -f $(echo $ID)'
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# super + {grave,Tab}
+	# bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+	# bspc wm -h off; \
+	# bspc node {older,newer} -f; \
+	# bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -112,20 +111,20 @@ super + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+# super + ctrl + {h,j,k,l}
+  # bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+# super + ctrl + {1-9}
+	# bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+# super + ctrl + space
+	# bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# super + ctrl + shift + space
+	# bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -161,20 +160,23 @@ XF86Audio{Raise,Lower}Volume
 
 
 # state control
-ctrl + shift + l 
-	systemctl suspend | betterlockscreen -l
+super + shift + c 
+	systemctlend | betterlockscreen -l
 
-ctrl + shift + alt + s
+super + shift + x
+  loginctl kill $USER
+
+super + shift + s
 	systemctl poweroff
 
-ctrl + shift + alt + r
+super + shift + r
 	systemctl reboot
 
 
 # screenshot
-Print
+{Print, super + ctrl + s}
   sh $HOME/.config/sxhkd/scripts/screenshot.sh full
-alt + Print
+{alt + Print, super + alt + s}
   sh $HOME/.config/sxhkd/scripts/screenshot.sh area
 
 
