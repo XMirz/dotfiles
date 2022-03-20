@@ -52,7 +52,7 @@ SETUVAR _fish_abbr_vimd:vim\x20\x7e/\x2econfig/dunst/dunstrc
 SETUVAR _fish_abbr_viminit:vim\x20\x7e/\x2econfig/nvim/init\x2elua
 SETUVAR _fish_abbr_vimp:vim\x20\x7e/\x2econfig/picom/picom\x2econf
 SETUVAR _fish_abbr_vimplug:vim\x20\x7e/\x2econfig/nvim/plugins\x2evim
-SETUVAR _fish_abbr_vimpp:vim\x20\x7e/\x2econfig/polybar/config
+SETUVAR _fish_abbr_vimpp:vim\x20\x7e/\x2econfig/polybar/config\x2eini
 SETUVAR _fish_abbr_vimrt:vim\x20\x7e/\x2econfig/rofi/themes\x2erasi
 SETUVAR _fish_abbr_vims:vim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_voldown:pactl\x20set\x2dsink\x2dvolume\x20\x40DEFAULT_SINK\x40\x20\x2d10\x25

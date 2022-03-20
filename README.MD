@@ -3,4 +3,10 @@
 Requirement : 
   - Alacritty
   - FiraMono Nerd Font
-  - 
+  - Give user or group permission to write brightness file
+    Example : 
+    '''
+    sudo chgrp video /sys/class/backlight/intel_backlight/brightness
+    sudo chmod g+rw /sys/class/backlight/intel_backlight/brightness
+    '''
+

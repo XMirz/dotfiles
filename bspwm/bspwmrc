@@ -23,10 +23,12 @@ killall -q polybar
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
 polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
 
+# Remove Top Gap
+bspc config top_padding 0
 
 # nitrogen --set-zoom-fill /home/Predator/Pictures/Wallpapers/Lost_Forest_PC_BTLG.jpg & 
 # feh --bg-fill ~/Pictures/Wallpapers/Outrun_PC_BTLG.jpg
-feh --bg-fill ~/Pictures/Wallpapers/Horizon/1082417.jpg
+feh --bg-fill ~/Pictures/Wallpapers/Horizon/hzd_aloy_siluet.jpg
 
 bspc monitor -d 1 2 3 4 5
 
