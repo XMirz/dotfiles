@@ -6,7 +6,8 @@
 # super + shift + a
 # killall dunst;notify-send Anu "Test Critical" -u critical
 
-
+super + p
+  pkill dunst && notify-send a "description alo;sdl alsdjlkasdh asldhalsdhl; asdh las"
 # terminal emulator
 super + Return
 	alacritty
@@ -171,20 +172,12 @@ ctrl + shift + alt + r
 
 
 # screenshot
-super + Print 
-		sh /home/xmirz/.config/bspwm/bin/ss_window.sh && dunstify Screenshot 'Window screenshot saved!'
-
-ctrl + Print
-	bash -c 'import -window root -border $HOME/Pictures/Screenshots/Screenshot.png && convert $HOME/Pictures/Screenshots/Screenshot.png \\( +clone -background black -shadow 50x10+0+10 \\) \\
-                  +swap -background none -layers merge +repage $HOME/Pictures/Screenshots/Screenshot.png; \\
-                  convert $HOME/Pictures/Screenshots/Screenshot.png -bordercolor none -border 30 $HOME/Pictures/Screenshots/Screenshot_$(date '+%d_%m_%Y.%H%M_%S').png && \\
-                  rm $HOME/Pictures/Screenshots/Screenshot.png'
-
+Print
+  sh $HOME/.config/sxhkd/scripts/screenshot.sh full
 alt + Print
-	bash -c 'import -border $HOME/Pictures/Screenshots/Screenshot.png && convert $HOME/Pictures/Screenshots/Screenshot.png \\( +clone -background black -shadow 50x10+0+10 \\) \\
-                  +swap -background none -layers merge +repage $HOME/Pictures/Screenshots/Screenshot.png; \\
-                  convert $HOME/Pictures/Screenshots/Screenshot.png -bordercolor none -border 30 $HOME/Pictures/Screenshots/Screenshot_$(date '+%d_%m_%Y.%H%M_%S').png && \\
-                  rm $HOME/Pictures/Screenshots/Screenshot.png'
+  sh $HOME/.config/sxhkd/scripts/screenshot.sh area
+
+
 
 # random wallpaper
 super + ctrl + w
