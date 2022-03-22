@@ -9,4 +9,4 @@ Requirement :
     '''
     sudo chgrp video /sys/class/backlight/intel_backlight/brightness
     sudo chmod g+rw /sys/class/backlight/intel_backlight/brightness    '''
-
+  - Ueberzug for ranger preview

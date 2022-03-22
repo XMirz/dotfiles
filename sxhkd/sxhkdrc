@@ -16,7 +16,7 @@ super + @space
 super + shift + @space
 	rofi -show combi 
 super + alt + {c,v,n}
-	{google-chrome-stable, code, thunar}
+	{google-chrome-stable, code, nautilus}
 
 
 # make sxhkd reload its configuration files:
@@ -70,12 +70,13 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
+# swap focuse with given diretion
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+	# bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -111,8 +112,8 @@ super + {_,shift + }{1-9,0}
 #
 
 # preselect the direction
-# super + ctrl + {h,j,k,l}
-  # bspc node -p {west,south,north,east}
+super + ctrl + {h,j,k,l}
+  bspc node -p {west,south,north,east}
 
 # preselect the ratio
 # super + ctrl + {1-9}
@@ -130,14 +131,6 @@ super + {_,shift + }{1-9,0}
 # move/resize
 #
 
-# expand a window by moving one of its side outward
-# super + alt + {h,j,k,l}
-#	bspc node -z {left -50 0,bottom 0 50,top 0 -50,right 20 0}
-
-# contract a window by moving one of its side inward
-# super + alt + shift + {h,j,k,l}
-# 	bspc node -z {right -50 0,top 0 50,bottom 0 -50,left 50 0}
-
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
@@ -150,26 +143,27 @@ super + alt + {Left,Down,Up,Right}
 
 # brightness control
 XF86MonBrightnessDown
-	light -U 5
+  brightnessctl set 5%-
 XF86MonBrightnessUp 
-	light -A 5
-	# volume control
+  brightnessctl set +5%
+
+# volume control
 XF86Audio{Raise,Lower}Volume
     pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
 
 
 
 # state control
-super + shift + c 
-	systemctlend | betterlockscreen -l
+ctrl + alt + c 
+	systemctl suspend
 
-super + shift + x
-  loginctl kill $USER
+ctrl + alt + x
+  loginctl kill-user $USER
 
-super + shift + s
+ctrl + alt + s
 	systemctl poweroff
 
-super + shift + r
+ctrl + alt + r
 	systemctl reboot
 
 

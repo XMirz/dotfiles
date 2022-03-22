@@ -46,3 +46,5 @@ bspc config focused_border_color "#0EA5E9"
 bspc config normal_border_color "#00E11D48"
 
 bspc rule -a zoom desktop="^5"
+bspc rule -a google-chrome-stable desktop="^2"
+bspc rule -a chromium desktop="^2"

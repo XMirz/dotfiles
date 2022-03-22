@@ -12,6 +12,7 @@ SETUVAR --export PF_COL_USER:6
 SETUVAR --export QT_QPA_PLATFORMTHEME:qt5ct
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_c:clear
+SETUVAR _fish_abbr_clock:tty\x2dclock\x20\x2db\x20\x2dc\x20\x2dC\x206\x20\x2ds
 SETUVAR _fish_abbr_cv:cd\x20\x7e/\x2econfig/nvim
 SETUVAR _fish_abbr_fc:flutter\x20create
 SETUVAR _fish_abbr_fd:flutter\x20doctor
