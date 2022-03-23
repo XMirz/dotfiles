@@ -142,15 +142,14 @@ super + alt + {Left,Down,Up,Right}
     bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d"," -f$SELECTION)'
 
 # brightness control
-XF86MonBrightnessDown
-  brightnessctl set 5%-
-XF86MonBrightnessUp 
-  brightnessctl set +5%
+XF86MonBrightness{Down,Up}
+  brightnessctl set {5%-, +5%}
+super + {comma,period}
+  brightnessctl set {5%-, +5%}
 
 # volume control
 XF86Audio{Raise,Lower}Volume
     pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
-
 
 
 # state control
