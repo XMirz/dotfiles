@@ -1,7 +1,13 @@
 #!/usr/bin/bash
 case $1 in
   name)
-    xprop -id $(xdotool getwindowfocus) | awk '/WM_CLASS/ {gsub("\"","");gsub(",",""); print $4}'
+    WINDOW_ID=$(xdotool getwindowfocus)
+    NAME=$(xprop -id $WINDOW_ID | awk '/WM_CLASS/ {gsub("\"","");gsub(",",""); print $4}')
+    if [[ ! $NAME = ""  ]]; then
+      echo $NAME
+    else
+      echo $2
+    fi
     ;;
 esac
 
